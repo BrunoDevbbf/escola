@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>E.E.E.F. Alexandre de Gusmão · Nova Brasilândia D’Oeste, RO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:dark;
+  --bg:#050a07; --bg2:#0a140e; --card:#0d1a12; --ink:#ecfff4; --muted:#92b8a2; --line:#1d3b2a;
+  --g:#2dff8a; --lime:#b6ff3b; --on-g:#03140a; --glow:rgba(45,255,138,.14);
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f0faf4; --bg2:#ddf3e6; --card:#ffffff; --ink:#07190f; --muted:#3e6350; --line:#b5dcc5;
+  --g:#0a8a4a; --lime:#3f7f00; --on-g:#ffffff; --glow:rgba(10,138,74,.12);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(60rem 30rem at 15% -8%,var(--glow),transparent 70%),var(--bg);color:var(--ink);font-family:"Sora",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;margin:0;line-height:1.08}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:10px}
+.top nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.top a{color:var(--muted);text-decoration:none;font-size:.88rem;padding:10px 12px;border-radius:99px;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.top a:hover{color:var(--ink)}
+.theme{font:inherit;font-size:.82rem;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:8px 14px;cursor:pointer;min-height:44px;flex:none}
+a:focus-visible,.theme:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+
+.hero{padding:44px 0 56px}
+.place{color:var(--g);font-size:.9rem;font-weight:500}
+.hero h1{font-size:clamp(2.7rem,12vw,6.2rem);font-weight:800;letter-spacing:-.025em;margin-top:14px}
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1.5px var(--g)}
+.hero p{max-width:52ch;color:var(--muted);margin:22px 0 0;font-size:1.08rem}
+.cta{display:inline-flex;margin-top:28px;min-height:50px;align-items:center;padding:12px 24px;border-radius:99px;font-weight:700;text-decoration:none;color:var(--on-g);background:linear-gradient(90deg,var(--g),var(--lime))}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.facts span{border:1px solid var(--line);background:var(--bg2);border-radius:99px;padding:6px 14px;font-size:.85rem;color:var(--muted)}
+
+section{padding:48px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.8rem,6vw,2.7rem);font-weight:800;max-width:20ch}
+.lead{color:var(--muted);max-width:60ch;margin:14px 0 0}
+
+/* Patrono */
+.patron{display:grid;gap:26px;margin-top:26px}
+@media(min-width:760px){.patron{grid-template-columns:1.1fr 1fr;align-items:start}}
+.patron p{margin:0 0 14px;color:var(--muted)}
+.patron p strong{color:var(--ink)}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 22px 16px}
+.tl li::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--g);box-shadow:0 0 0 4px var(--bg)}
+.tl li.todo::before{background:var(--bg);border:2px dashed var(--muted)}
+.tl b{font-family:"Fraunces",Georgia,serif;font-size:1.35rem;display:block;line-height:1.2}
+.tl li.todo b{color:var(--muted)}
+.tl span{color:var(--muted);font-size:.93rem}
+
+/* Por que estudar */
+.cards{display:grid;gap:16px;margin-top:28px;grid-template-columns:1fr}
+@media(min-width:620px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:940px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;transition:border-color .2s}
+.card:hover{border-color:var(--g)}
+.card .ic{font-size:2rem;display:block;margin-bottom:10px}
+.card h3{font-size:1.3rem}
+.card p{margin:8px 0 0;color:var(--muted);font-size:.95rem}
+.values{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.values span{background:linear-gradient(90deg,var(--g),var(--lime));color:var(--on-g);font-weight:700;border-radius:99px;padding:8px 18px;font-size:.95rem}
+
+/* Visite */
+.visit{display:grid;gap:20px;margin-top:24px}
+@media(min-width:760px){.visit{grid-template-columns:1fr 1fr}}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.box h3{font-size:1.2rem;margin-bottom:8px}
+.box p{margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:24px 0 34px;color:var(--muted);font-size:.88rem}
+@media(prefers-reduced-motion:reduce){.card{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <nav aria-label="Seções"><a href="#patrono">Nosso patrono</a><a href="#historia">História</a><a href="#estudar">Por que estudar aqui</a><a href="#visite">Visite</a></nav>
+    <button class="theme" id="theme" type="button">Tema claro</button>
+  </div>
+
+  <header class="hero">
+    <div class="place">Nova Brasilândia D’Oeste · Rondônia</div>
+    <h1>Escola<span>Alexandre de Gusmão</span></h1>
+    <p>Uma escola da rede estadual onde estudar é descobrir caminhos: com laboratório de informática, biblioteca, esporte, área verde e uma comunidade que acolhe cada aluno.</p>
+    <a class="cta" href="#estudar">Conheça a escola</a>
+    <div class="facts"><span>Rede estadual</span><span>Laboratório de informática</span><span>Biblioteca</span><span>Quadras esportivas</span></div>
+  </header>
+</div>
+
+<section id="patrono"><div class="wrap">
+  <h2>Um nome com história</h2>
+  <p class="lead">Nossa escola leva o nome de um dos mais importantes diplomatas da história do Brasil.</p>
+  <div class="patron">
+    <div>
+      <p><strong>Alexandre de Gusmão</strong> nasceu em Santos, São Paulo, em 1695, e morreu em Lisboa, em 1753. Foi diplomata, jurista, economista e escritor, e atuou como secretário do rei D. João V, de Portugal.</p>
+      <p>Seu nome está ligado ao <strong>Tratado de Madri (1750)</strong>, que usou o princípio do <em>uti possidetis</em>: quem ocupa a terra, é dono dela. Esse acordo ajudou a definir o desenho do território brasileiro, incluindo as terras do Oeste onde hoje fica Rondônia.</p>
+      <p>Estudar numa escola com esse nome é carregar um convite: usar o conhecimento para construir o futuro do lugar onde se vive.</p>
+    </div>
+    <ol class="tl" aria-label="Linha do tempo do patrono">
+      <li><b>1695</b><span>Nasce em Santos, São Paulo.</span></li>
+      <li><b>1750</b><span>Assinatura do Tratado de Madri, com participação decisiva de Gusmão.</span></li>
+      <li><b>1753</b><span>Falece em Lisboa, deixando cartas, estudos e poesias.</span></li>
+    </ol>
+  </div>
+</div></section>
+
+<section id="historia"><div class="wrap">
+  <h2>A história da nossa escola</h2>
+  <p class="lead">Cada marco da escola faz parte da história de Nova Brasilândia D’Oeste. Preencha os marcos abaixo com os anos e fatos reais (veja o bloco HISTORIA no código).</p>
+  <ol class="tl" id="historia-tl" style="margin-top:28px;max-width:640px"></ol>
+</div></section>
+
+<section id="estudar"><div class="wrap">
+  <h2>Por que é bom estudar aqui</h2>
+  <p class="lead">Uma estrutura pensada para o aluno aprender, se movimentar e conviver.</p>
+  <div class="cards">
+    <article class="card"><span class="ic" aria-hidden="true">💻</span><h3>Laboratório de informática</h3><p>Internet e banda larga na escola para pesquisar, programar e criar projetos, como os sites desta feira.</p></article>
+    <article class="card"><span class="ic" aria-hidden="true">📚</span><h3>Biblioteca</h3><p>Espaço para ler, estudar e imaginar, com livros ao alcance de todos os alunos.</p></article>
+    <article class="card"><span class="ic" aria-hidden="true">⚽</span><h3>Quadras coberta e descoberta</h3><p>Educação física, jogos e campeonatos com sol ou com chuva.</p></article>
+    <article class="card"><span class="ic" aria-hidden="true">🌳</span><h3>Pátio coberto e área verde</h3><p>Lugares para o intervalo, para conversar e para respirar entre uma aula e outra.</p></article>
+    <article class="card"><span class="ic" aria-hidden="true">🍽️</span><h3>Alimentação e refeitório</h3><p>Refeitório e alimentação escolar, para aprender com energia.</p></article>
+    <article class="card"><span class="ic" aria-hidden="true">🤝</span><h3>Professores e comunidade</h3><p>Sala de professores, equipe presente e uma comunidade que caminha junto com os alunos.</p></article>
+  </div>
+  <div class="values" aria-label="O que a escola ensina"><span>Conhecimento</span><span>Respeito</span><span>Tecnologia</span><span>Esporte</span><span>Cidadania</span></div>
+</div></section>
+
+<section id="visite"><div class="wrap">
+  <h2>Venha nos visitar</h2>
+  <div class="visit">
+    <div class="box"><h3>Onde fica</h3><p>Rua das Palmeiras, 2685 · Setor 13<br>Nova Brasilândia D’Oeste, Rondônia</p></div>
+    <div class="box"><h3>Quem somos</h3><p>Escola Estadual de Ensino Fundamental Alexandre de Gusmão, da rede estadual de ensino.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Site feito pelos alunos para a Feira de Informática · E.E.E.F. Alexandre de Gusmão</div></footer>
+
+<script>
+/* ===== HISTORIA: complete com os fatos reais da escola. Deixe ano vazio ("") para mostrar como pendente. ===== */
+const HISTORIA = [
+  {ano:"", texto:"Fundação da escola em Nova Brasilândia D’Oeste."},
+  {ano:"", texto:"Primeiras turmas e primeiros professores."},
+  {ano:"", texto:"Chegada do laboratório de informática."},
+  {ano:"2026", texto:"Alunos criam seus próprios sites na Feira de Informática."}
+];
+document.getElementById("historia-tl").innerHTML = HISTORIA.map(h =>
+  `<li class="${h.ano ? "" : "todo"}"><b>${h.ano || "Ano a preencher"}</b><span>${h.texto}</span></li>`).join("");
+
+document.getElementById("theme").addEventListener("click", function(){
+  const r = document.documentElement, light = r.dataset.theme === "light";
+  r.dataset.theme = light ? "dark" : "light";
+  this.textContent = light ? "Tema claro" : "Tema escuro";
+});
+</script>
+</body>
+</html>
